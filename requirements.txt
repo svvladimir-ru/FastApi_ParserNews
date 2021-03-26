@@ -11,3 +11,5 @@ six==1.15.0
 soupsieve==2.1
 SQLAlchemy==1.4.2
 urllib3==1.26.2
+fastapi==0.63.0
+alembic==1.5.8

@@ -9,7 +9,7 @@ from alembic import context
 sys.path = ['', '..'] + sys.path[1:]
 
 from parser.base import Base
-from parser.bd import SQLALCHEMY_DATABASE_URL
+from parser.db import SQLALCHEMY_DATABASE_URL
 
 # from database.database import Base
 # this is the Alembic Config object, which provides

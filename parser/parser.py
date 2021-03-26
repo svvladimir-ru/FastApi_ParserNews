@@ -140,7 +140,7 @@ class M24():
                     'pubdate': i.find('pubdate').get_text(),
                     'image': i.find('enclosure').get('url'),
                     'category': i.find('category').get_text(),
-                    'yandex:genre': i.find('yandex:genre').get_text(),
+                    'genre': i.find('yandex:genre').get_text(),
                 }
             )
             if i.find('media:group'):
@@ -185,9 +185,3 @@ class Graber():
         self.interfax = Interfax()
         self.kommersant = Kommersant()
         self.m24 = M24()
-
-
-z = Graber()
-z.m24.news(10)
-url = z.m24.item[0]['link']
-pp.pprint(z.m24.grub(url))

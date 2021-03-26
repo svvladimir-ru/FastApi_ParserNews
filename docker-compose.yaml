@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql-container:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_DATABASE=test
+
+  app-container-parsing:
+    build: .
+    restart: always
+    ports:
+      - 8000:8000
+#    command: uvicorn main:app --reload
+    depends_on:
+      - mysql-container

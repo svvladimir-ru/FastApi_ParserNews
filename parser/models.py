@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Text, JSON
-from .bd import Base, engine
+from .db import Base, engine
 from sqlalchemy.orm import relationship
 
 
@@ -18,6 +18,7 @@ class Item(Base):
     __tablename__ = 'items'
 
     id = Column(Integer, primary_key=True, index=True)
+    author = Column(String(100))
     title = Column(String(150))
     link = Column(String(200))
     description = Column(Text)
